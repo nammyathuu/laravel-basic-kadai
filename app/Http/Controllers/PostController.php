@@ -34,6 +34,6 @@ class PostController extends Controller
         $post->content = $request->input('content') ;
         $post->save() ;
 
-        return redirect("/posts/index.blade.php") ;
+        return redirect("/posts/{post->title}") ;
      } 
 }
