@@ -33,6 +33,6 @@ class PostController extends Controller
         $post->content = $request->input('content') ;
         $post->save() ;
 
-        return redirect("/posts/{$post->id}") ;
+        return redirect("/posts") ;
      } 
 }
