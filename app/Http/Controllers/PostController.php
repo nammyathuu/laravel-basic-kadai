@@ -28,7 +28,7 @@ class PostController extends Controller
             'content' =>'required|max:200'
         ]) ;
         
-        $post = new Post() ;
+        $post = new Post ;
         $post->title = $request->input('title') ;
         $post->content = $request->input('content') ;
         $post->save() ;
