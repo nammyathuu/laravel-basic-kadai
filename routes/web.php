@@ -44,9 +44,7 @@ Route::get('/posts',[PostController::class, 'index'])->name('posts.index');
 //投稿作成
 Route::get('/posts/create',[PostController::class, 'create'])->name('posts.create')->middleware('auth');
 
-
- //投稿作成機能
- Route::post('/posts', [PostController::class, 'store'])->name('posts.store')->middleware('auth');
+Route::post('/posts', [PostController::class, 'store'])->name('posts.store')->middleware('auth');
 
  //投稿詳細
  Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
