@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,3 +29,26 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/post', function () {
+    return 'Hello, world!';
+});
+
+//投稿一覧
+Route::get('/posts',[PostController::class, 'index'])->name('posts.index');
+
+//投稿作成
+Route::get('/posts/create',[PostController::class, 'create'])->name('posts.create');
+
+
+ //投稿作成機能
+ Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+
+ //投稿詳細
+ Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
+
+ Route::resource('posts', PostController::class);
