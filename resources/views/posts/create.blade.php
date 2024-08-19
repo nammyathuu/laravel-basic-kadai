@@ -20,7 +20,7 @@
          </div>
      @endif    
  
-     <form action="{{ route('posts.store') }}" method="POST">
+     <form action="{{ route('store') }}" method="POST">
          @csrf
          <table>
              <tr>
